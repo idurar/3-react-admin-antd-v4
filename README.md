@@ -16,10 +16,10 @@ location /react-antdesign-demo/ {
 
 * 解决github pages刷新后404，找不到页面默认使用根目录下的404.html
 ```
-拷贝dist目录下的index.html，更名为404.html
+拷贝build目录下的index.html，更名为404.html
 ```
 
-* dist目录提交到github的pages分支，用pages分支构建github pages
+* build目录提交到github的pages分支，用pages分支构建github pages
 ```cmd
-git subtree push --prefix dist github pages
+git subtree push --prefix build github pages
 ```
