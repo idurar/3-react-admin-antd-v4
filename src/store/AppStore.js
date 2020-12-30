@@ -6,8 +6,19 @@ import Store from "./Store.js";
  */
 export default Store.bind({
     state: {
+        // 应用软件名称
+        appTitle: '应用软件名称',
         // 构建时间
-        buildTime: /*[BUILD_TIME*/'2020-12-29 11:12'/*BUILD_TIME]*/,
+        buildTime: /*[BUILD_TIME*/'2020-12-30 17:11'/*BUILD_TIME]*/,
     },
-    action: {}
+    action: {
+        /**
+         * 设置title
+         *
+         * @param title 目标title，没有则使用appTitle
+         */
+        setPageTitle(title) {
+            document.querySelector('title').innerHTML = title ? title : this.state().appTitle;
+        },
+    }
 }, React)();

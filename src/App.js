@@ -1,14 +1,20 @@
-import './App.css';
 import 'antd/dist/antd.css';
-import LoginPage from "./view/LoginPage.js";
+import AppRouter from "./router/AppRouter.js";
+import AppStore from "./store/AppStore.js";
+import {BrowserRouter} from "react-router-dom";
 
 /**
  * 主组件
  */
 function App() {
+    const appStore = AppStore();
+    appStore.action.setPageTitle();
+
     return (
         <div>
-            <LoginPage/>
+            <BrowserRouter basename={process.env.PUBLIC_URL}>
+                <AppRouter/>
+            </BrowserRouter>
         </div>
     );
 }

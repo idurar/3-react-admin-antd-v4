@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/react-antdesign-demo/static/css/main.bcf36d5c.chunk.css",
-    "main.js": "/react-antdesign-demo/static/js/main.115c24b7.chunk.js",
-    "runtime-main.js": "/react-antdesign-demo/static/js/runtime-main.1fd0812e.js",
+    "main.css": "/react-antdesign-demo/static/css/main.465a7df1.chunk.css",
+    "main.js": "/react-antdesign-demo/static/js/main.7af533f1.chunk.js",
+    "runtime-main.js": "/react-antdesign-demo/static/js/runtime-main.a8cd7e8c.js",
     "static/css/2.efb9cb5d.chunk.css": "/react-antdesign-demo/static/css/2.efb9cb5d.chunk.css",
-    "static/js/2.a404e855.chunk.js": "/react-antdesign-demo/static/js/2.a404e855.chunk.js",
-    "static/js/3.3fab0ea6.chunk.js": "/react-antdesign-demo/static/js/3.3fab0ea6.chunk.js",
+    "static/js/2.99c2b06d.chunk.js": "/react-antdesign-demo/static/js/2.99c2b06d.chunk.js",
+    "static/js/3.7d3bec35.chunk.js": "/react-antdesign-demo/static/js/3.7d3bec35.chunk.js",
     "index.html": "/react-antdesign-demo/index.html",
-    "static/js/2.a404e855.chunk.js.LICENSE.txt": "/react-antdesign-demo/static/js/2.a404e855.chunk.js.LICENSE.txt"
+    "static/js/2.99c2b06d.chunk.js.LICENSE.txt": "/react-antdesign-demo/static/js/2.99c2b06d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.1fd0812e.js",
+    "static/js/runtime-main.a8cd7e8c.js",
     "static/css/2.efb9cb5d.chunk.css",
-    "static/js/2.a404e855.chunk.js",
-    "static/css/main.bcf36d5c.chunk.css",
-    "static/js/main.115c24b7.chunk.js"
+    "static/js/2.99c2b06d.chunk.js",
+    "static/css/main.465a7df1.chunk.css",
+    "static/js/main.7af533f1.chunk.js"
   ]
 }
