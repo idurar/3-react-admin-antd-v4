@@ -11,7 +11,7 @@ function App() {
     appStore.action.setPageTitle();
 
     return (
-        <div>
+        <div className={'app'}>
             <BrowserRouter basename={process.env.PUBLIC_URL}>
                 <AppRouter/>
             </BrowserRouter>

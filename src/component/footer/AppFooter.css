@@ -1,0 +1,11 @@
+.appFooter {
+    overflow: hidden;
+}
+
+.buildTime {
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -50%);
+    float: right;
+    margin-right: 10px;
+}
