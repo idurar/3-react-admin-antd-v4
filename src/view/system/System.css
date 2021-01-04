@@ -3,6 +3,10 @@
     background-color: white;
 }
 
+.content {
+    padding: 5px;
+}
+
 .header {
     height: 50px;
     padding: 0;
@@ -17,4 +21,42 @@
 
 .appFooter {
     height: 100%;
+}
+
+.menuTree {
+    height: 100%;
+}
+
+.side {
+    background-color: #303133;
+}
+
+.ant-layout-sider {
+    transition: all 0.5s;
+}
+
+.ant-back-top {
+    margin-right: 50px;
+}
+
+.up-div {
+    border: 1px solid #DCDFE6;
+    font-size: 16px;
+    display: inline-block;
+    width: 100px;
+    border-radius: 5px;
+    height: 40px;
+    box-shadow: 0 0 6px rgba(0,0,0,.12);
+    color: #409eff;
+}
+.up-div:hover {
+    background-color: #f2f6fc;
+}
+
+.up {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    display: inline-block;
 }

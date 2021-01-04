@@ -1,0 +1,57 @@
+.ant-menu-inline-collapsed {
+    width: 50px;
+}
+
+.menuTree-div {
+    height: calc(100% - 50px);
+    overflow: auto;
+}
+
+.menuTree-div .ant-menu-submenu-title,
+.menuTree-div .ant-menu-item,
+.menuTree-div ul.ant-menu,
+.menuTree-div ul.ant-menu.ant-menu-sub,
+.popMenu .ant-menu-submenu-title,
+.popMenu .ant-menu-item,
+.popMenu ul.ant-menu,
+.popMenu ul.ant-menu.ant-menu-sub{
+    background-color: #303133;
+}
+
+.menuTree-div .ant-menu-sub .ant-menu-item,
+.popMenu .ant-menu-sub .ant-menu-item{
+    background-color: #202123;
+}
+
+.menuTree-div li .ant-menu-submenu-title,
+.menuTree-div li.ant-menu-item,
+.menuTree-div .ant-menu .ant-menu-item,
+.menuTree-div .ant-menu-sub .ant-menu-item,
+.popMenu li .ant-menu-submenu-title,
+.popMenu li.ant-menu-item,
+.popMenu .ant-menu .ant-menu-item,
+.popMenu .ant-menu-sub .ant-menu-item {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.menuTree-div .ant-menu-item,
+.menuTree-div .ant-menu-submenu-title,
+.popMenu .ant-menu-item,
+.popMenu .ant-menu-submenu-title{
+    color: #FFFFFF;
+}
+
+.menuTree-div .ant-menu-item:hover,
+.menuTree-div .ant-menu-submenu-title:hover,
+.menuTree-div .ant-menu .ant-menu-item.ant-menu-item-selected,
+.popMenu .ant-menu-item:hover,
+.popMenu .ant-menu-submenu-title:hover,
+.popMenu .ant-menu .ant-menu-item.ant-menu-item-selected {
+    background-color: #606266;
+}
+
+.menuTree-div .ant-menu .ant-menu-item.ant-menu-item-selected span,
+.popMenu .ant-menu .ant-menu-item.ant-menu-item-selected span{
+    color: #409EFF;
+}

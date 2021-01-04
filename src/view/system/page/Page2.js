@@ -1,6 +1,8 @@
 function Page2(props) {
     return (
-        <div>Page2</div>
+        <div>
+            <div style={{height: '80px'}}>Page2</div>
+        </div>
     );
 }
 

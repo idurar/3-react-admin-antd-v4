@@ -1,8 +1,12 @@
 import React from 'react';
-import {Layout} from 'antd';
+import {BackTop, Layout} from 'antd';
 import SystemStore from "../../store/SystemStore.js";
 import './System.css';
 import AppFooter from "../../component/footer/AppFooter.js";
+import MenuTree from "../../component/menu/MenuTree.js";
+import SystemRouter from "../../router/SystemRouter.js";
+import MenuStore from "../../store/MenuStore.js";
+import {ArrowUpOutlined} from '@ant-design/icons';
 
 /**
  * 系统主页
@@ -12,6 +16,7 @@ function System(props) {
     let basePath = '/system';
 
     let systemStore = SystemStore();
+    let menuStore = MenuStore();
 
     function toPage(route) {
         props.history.push(basePath + route);
@@ -30,23 +35,26 @@ function System(props) {
 
     return (
         <div className={'system'}>
-            {/*<div>system</div>*/}
-            {/*<button onClick={() => toPage('/home')}>home</button>*/}
-            {/*<button onClick={() => toPage('/page1')}>page1</button>*/}
-            {/*<button onClick={() => toPage('/page2')}>page2</button>*/}
-            {/*<div>*/}
-            {/*    <SystemRouter base={basePath}/>*/}
-            {/*</div>*/}
             <Layout style={{height: systemStore.state.frameHeight + 'px'}}>
-                <Layout.Sider className={'side'}>
-                    <div>sider</div>
+                <Layout.Sider className={'side'} collapsed={menuStore.state.menuCollapse} collapsedWidth={'50px'} width={'200px'}>
+                    <MenuTree toPage={toPage}/>
                 </Layout.Sider>
                 <Layout>
-                    <Layout.Header class={'header'}>
+                    <Layout.Header className={'header'}>
                         <div>header</div>
                     </Layout.Header>
-                    <Layout.Content className={'content'}>
-                        <div>content</div>
+                    <Layout.Content className={'content'} id={'pageContent'}>
+                        <button onClick={() => {
+                            menuStore.action.switchCollapse();
+                        }}>{'' + menuStore.state.menuCollapse}</button>
+                        <div>
+                            <SystemRouter base={basePath}/>
+                        </div>
+                        <BackTop visibilityHeight={0} target={() => document.querySelector('#pageContent')}>
+                            <div className={'up-div'}>
+                                <div className="up"><ArrowUpOutlined /><span>回到顶部</span></div>
+                            </div>
+                        </BackTop>
                     </Layout.Content>
                     <Layout.Footer className={'footer'}>
                         <AppFooter/>
