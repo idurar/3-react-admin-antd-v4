@@ -1,4 +1,5 @@
 import AppStore from "../../store/AppStore.js";
+import MenuStore from "../../store/MenuStore.js";
 import './AppTitle.css';
 import logoImg from '../../logo.svg';
 
@@ -8,33 +9,25 @@ import logoImg from '../../logo.svg';
 function AppTitle(props) {
 
     let appStore = AppStore();
+    let menuStore = MenuStore();
 
     return (
         <div className={'appTitle'} title={appStore.state.appTitle}>
             <div className={'bg'}>
                 <div className={'bg-content'}>
                     <div className={'logo-div'}>
-                        <img className={'logo'} src={logoImg}/>
+                        <img className={'logo'} src={logoImg} alt={''}/>
                     </div>
                     {
-                        (() => {
-                            if (!props.collapse) {
-                                return (
-                                    <div className={'title-div'}>
-                                        <span className={'title'}>{appStore.state.appTitle}</span>
-                                    </div>
-                                );
-                            }
-                        })()
+                        menuStore.state.menuCollapse ? null :
+                            <div className={'title-div'}>
+                                <span className={'title'}>{appStore.state.appTitle}</span>
+                            </div>
                     }
                 </div>
             </div>
         </div>
     );
 }
-
-AppTitle.defaultProps = {
-    collapse: false,
-};
 
 export default AppTitle;

@@ -7,25 +7,22 @@ import MenuTree from "../../component/menu/MenuTree.js";
 import SystemRouter from "../../router/SystemRouter.js";
 import MenuStore from "../../store/MenuStore.js";
 import {ArrowUpOutlined} from '@ant-design/icons';
+import AppHeader from "../../component/header/AppHeader.js";
 
 /**
  * 系统主页
  */
 function System(props) {
 
-    let basePath = '/system';
-
     let systemStore = SystemStore();
     let menuStore = MenuStore();
 
-    function toPage(route) {
-        props.history.push(basePath + route);
-    }
-
+    // 更改页面高度
     function changeFrameHeight() {
         systemStore.action.windowHeightChange();
     }
 
+    // 监听窗口大小变化
     React.useEffect(() => {
         window.addEventListener('resize', changeFrameHeight);
         return () => {
@@ -37,22 +34,19 @@ function System(props) {
         <div className={'system'}>
             <Layout style={{height: systemStore.state.frameHeight + 'px'}}>
                 <Layout.Sider className={'side'} collapsed={menuStore.state.menuCollapse} collapsedWidth={'50px'} width={'200px'}>
-                    <MenuTree toPage={toPage}/>
+                    <MenuTree/>
                 </Layout.Sider>
                 <Layout>
                     <Layout.Header className={'header'}>
-                        <div>header</div>
+                        <AppHeader/>
                     </Layout.Header>
                     <Layout.Content className={'content'} id={'pageContent'}>
-                        <button onClick={() => {
-                            menuStore.action.switchCollapse();
-                        }}>{'' + menuStore.state.menuCollapse}</button>
                         <div>
-                            <SystemRouter base={basePath}/>
+                            <SystemRouter/>
                         </div>
                         <BackTop visibilityHeight={0} target={() => document.querySelector('#pageContent')}>
                             <div className={'up-div'}>
-                                <div className="up"><ArrowUpOutlined /><span>回到顶部</span></div>
+                                <div className="up"><ArrowUpOutlined/><span>回到顶部</span></div>
                             </div>
                         </BackTop>
                     </Layout.Content>

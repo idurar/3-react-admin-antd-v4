@@ -10,15 +10,15 @@ import Page2 from "../view/system/page/Page2.js";
 function SystemRouter(props) {
     return (
         <Switch>
-            <Route path={[props.base, props.base + "/home"]} exact={true} component={Home}/>
-            <Route path={props.base + "/page1"} component={Page1}/>
-            <Route path={props.base + "/page2"} component={Page2}/>
+            <Route path={[props.base, props.base + '/home']} exact={true} component={Home}/>
+            <Route path={props.base + '/page1'} component={Page1}/>
+            <Route path={props.base + '/page2'} component={Page2}/>
         </Switch>
     );
 }
 
 SystemRouter.defaultProps = {
-    base: '',
+    base: '/system',
 };
 
 export default SystemRouter;

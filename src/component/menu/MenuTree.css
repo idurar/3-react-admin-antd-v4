@@ -14,12 +14,12 @@
 .popMenu .ant-menu-submenu-title,
 .popMenu .ant-menu-item,
 .popMenu ul.ant-menu,
-.popMenu ul.ant-menu.ant-menu-sub{
+.popMenu ul.ant-menu.ant-menu-sub {
     background-color: #303133;
 }
 
 .menuTree-div .ant-menu-sub .ant-menu-item,
-.popMenu .ant-menu-sub .ant-menu-item{
+.popMenu .ant-menu-sub .ant-menu-item {
     background-color: #202123;
 }
 
@@ -38,7 +38,7 @@
 .menuTree-div .ant-menu-item,
 .menuTree-div .ant-menu-submenu-title,
 .popMenu .ant-menu-item,
-.popMenu .ant-menu-submenu-title{
+.popMenu .ant-menu-submenu-title {
     color: #FFFFFF;
 }
 
@@ -51,7 +51,12 @@
     background-color: #606266;
 }
 
+.menuTree-div .ant-menu .ant-menu-item.ant-menu-item-selected,
+.popMenu .ant-menu .ant-menu-item.ant-menu-item-selected {
+    border-right: 3px solid #409EFF;
+}
+
 .menuTree-div .ant-menu .ant-menu-item.ant-menu-item-selected span,
-.popMenu .ant-menu .ant-menu-item.ant-menu-item-selected span{
+.popMenu .ant-menu .ant-menu-item.ant-menu-item-selected span {
     color: #409EFF;
 }

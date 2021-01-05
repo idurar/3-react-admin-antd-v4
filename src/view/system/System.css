@@ -46,9 +46,10 @@
     width: 100px;
     border-radius: 5px;
     height: 40px;
-    box-shadow: 0 0 6px rgba(0,0,0,.12);
+    box-shadow: 0 0 6px rgba(0, 0, 0, .12);
     color: #409eff;
 }
+
 .up-div:hover {
     background-color: #f2f6fc;
 }

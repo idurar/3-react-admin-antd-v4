@@ -13,6 +13,7 @@ export default Store.bind({
         menuList: mockData.menuList,
     },
     action: {
+        // 切换菜单展开/收起
         switchCollapse() {
             this.publish({menuCollapse: !this.state().menuCollapse});
         },

@@ -8,8 +8,8 @@ import System from "../view/system/System.js";
 function AppRouter(props) {
     return (
         <Switch>
-            <Route path={[props.base, props.base + "/login"]} exact={true} component={LoginPage}/>
-            <Route path={props.base + "/system"} component={System}/>
+            <Route path={[props.base, props.base + '/login']} exact={true} component={LoginPage}/>
+            <Route path={props.base + '/system'} component={System}/>
         </Switch>
     );
 }

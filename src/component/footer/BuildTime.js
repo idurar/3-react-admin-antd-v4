@@ -1,5 +1,8 @@
 import AppStore from "../../store/AppStore.js";
 
+/**
+ * 构建时间组件
+ */
 function BuildTime(props) {
     let appStore = AppStore();
 

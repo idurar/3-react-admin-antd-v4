@@ -1,6 +1,9 @@
 import BuildTime from "./BuildTime.js";
 import './AppFooter.css';
 
+/**
+ * 页脚组件
+ */
 function AppFooter(props) {
 
     return (

@@ -1,0 +1,24 @@
+.appHeader {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.collapseButton, .userProfile {
+    position: relative;
+    top: 50%;
+    transform: translate(0%, -50%);
+    display: inline-block;
+    line-height: 0;
+}
+
+.collapseButton {
+    float: left;
+    margin-left: 10px;
+}
+
+.userProfile {
+    float: right;
+    margin-right: 50px;
+    font-size: 18px;
+}

@@ -1,6 +1,7 @@
 function Page2(props) {
     return (
         <div>
+            <input/>
             <div style={{height: '80px'}}>Page2</div>
         </div>
     );
