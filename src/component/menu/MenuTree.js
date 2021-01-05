@@ -38,20 +38,25 @@ function MenuTree(props) {
             );
         } else {
             return (
-                <Menu.Item key={menu.id} icon={getIcon(menu.icon)} onClick={() => {
-                    if (menu.route) history.push(menu.route);
-                }} title={menu.name}>
+                <Menu.Item key={menu.id} icon={getIcon(menu.icon)} title={menu.name}>
                     {menu.name}
                 </Menu.Item>
             );
         }
     }
 
+    // 点击菜单
+    function menuClick(menu) {
+        let m = menuStore.action.menuClick(menu.key);
+        if (m && m.route) history.push(m.route);
+        menuStore.action.storeTabList();
+    }
+
     return (
         <div className={'menuTree'}>
             <AppTitle/>
             <div className={'menuTree-div'}>
-                <Menu mode={'inline'} theme={'dark'} inlineIndent={10}>
+                <Menu mode={'inline'} theme={'dark'} inlineIndent={10} onClick={menu => menuClick(menu)}>
                     {
                         menuStore.state.menuList.map(i => subMenu(i))
                     }

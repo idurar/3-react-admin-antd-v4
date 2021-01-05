@@ -9,7 +9,7 @@ export default Store.bind({
         // 应用软件名称
         appTitle: '应用软件名称',
         // 构建时间
-        buildTime: /*[BUILD_TIME*/'2021-01-05 11:16'/*BUILD_TIME]*/,
+        buildTime: /*[BUILD_TIME*/'2021-01-05 17:23'/*BUILD_TIME]*/,
     },
     action: {
         /**

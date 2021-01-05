@@ -8,6 +8,7 @@ import SystemRouter from "../../router/SystemRouter.js";
 import MenuStore from "../../store/MenuStore.js";
 import {ArrowUpOutlined} from '@ant-design/icons';
 import AppHeader from "../../component/header/AppHeader.js";
+import TabBar from "../../component/menu/TabBar";
 
 /**
  * 系统主页
@@ -16,6 +17,12 @@ function System(props) {
 
     let systemStore = SystemStore();
     let menuStore = MenuStore();
+
+    // 启动后执行 todo 迁移至路由
+    window.addEventListener('load', event => {
+        // 恢复tab标签页
+        menuStore.action.restoreTabList();
+    });
 
     // 更改页面高度
     function changeFrameHeight() {
@@ -40,6 +47,7 @@ function System(props) {
                     <Layout.Header className={'header'}>
                         <AppHeader/>
                     </Layout.Header>
+                    <TabBar/>
                     <Layout.Content className={'content'} id={'pageContent'}>
                         <div>
                             <SystemRouter/>
