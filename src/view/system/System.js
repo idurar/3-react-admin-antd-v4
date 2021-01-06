@@ -18,12 +18,6 @@ function System(props) {
     let systemStore = SystemStore();
     let menuStore = MenuStore();
 
-    // 启动后执行 todo 迁移至路由
-    window.addEventListener('load', event => {
-        // 恢复tab标签页
-        menuStore.action.restoreTabList();
-    });
-
     // 更改页面高度
     function changeFrameHeight() {
         systemStore.action.windowHeightChange();
@@ -32,10 +26,14 @@ function System(props) {
     // 监听窗口大小变化
     React.useEffect(() => {
         window.addEventListener('resize', changeFrameHeight);
+        // 恢复标签页
+        menuStore.action.restoreTabList();
         return () => {
             window.removeEventListener('resize', changeFrameHeight);
+
         };
-    });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
 
     return (
         <div className={'system'}>

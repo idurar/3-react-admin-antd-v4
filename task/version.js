@@ -26,4 +26,4 @@ let newContent = content.replace(
     '/*[BUILD_TIME*/\'' + buildTime + '\'/*BUILD_TIME]*/');
 fs.writeFileSync(renderFile, newContent);
 
-console.log('构建时间：' + buildTime);
+console.log(`[${renderFile}] -- 写入构建时间 -- [${buildTime}]`);

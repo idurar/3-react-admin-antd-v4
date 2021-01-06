@@ -1,21 +1,37 @@
-import {Route, Switch} from 'react-router-dom';
+import {Switch} from 'react-router-dom';
 import LoginPage from "../view/LoginPage.js";
 import System from "../view/system/System.js";
+import NotFound from "../view/NotFound.js";
+import React from "react";
+import NProgressRoute from "./NProgressRoute.js";
 
 /**
  * App路由
  */
 function AppRouter(props) {
+
+    // 路由数据
+    let routes = [
+        {
+            path: ['', '/login'],
+            component: LoginPage,
+            exact: true,
+        },
+        {
+            path: ['/system'],
+            component: System,
+        },
+    ];
+
     return (
         <Switch>
-            <Route path={[props.base, props.base + '/login']} exact={true} component={LoginPage}/>
-            <Route path={props.base + '/system'} component={System}/>
+            {
+                routes.map(r => <NProgressRoute key={r.path[0]} path={r.path} exact={r.exact} component={r.component}/>)
+            }
+            <NProgressRoute path={['/notFound', '*']} component={NotFound}/>
         </Switch>
     );
 }
 
-AppRouter.defaultProps = {
-    base: '',
-};
 
 export default AppRouter;

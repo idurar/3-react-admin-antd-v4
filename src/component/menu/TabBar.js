@@ -43,6 +43,7 @@ function TabBar(props) {
     function removeTab(key) {
         let temp = menuStore.state.activeTab;
         let preTab = menuStore.action.removeTab(key);
+        //  关闭的是当前页，则激活左边一个标签页
         if (preTab && temp === key) {
             history.push(preTab.route);
             menuStore.action.setActiveTab(preTab.id);

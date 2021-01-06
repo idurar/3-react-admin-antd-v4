@@ -38,6 +38,15 @@ export default Store.bind({
             }
             return null;
         },
+        // 根据路由从tab数组中查找tab
+        getTabByRoute(route) {
+            for (let i = 0; i < this.state().tabList.length; i++) {
+                if (this.state().tabList[i].route === route) {
+                    return {...this.state().tabList[i]};
+                }
+            }
+            return null;
+        },
         // 设置当前激活的tab页
         setActiveTab(key) {
             this.publish({activeTab: key});
@@ -46,7 +55,7 @@ export default Store.bind({
         setOpenMenu(array) {
             this.publish({openMenu: array});
         },
-        // 移除tab
+        // 移除tab，返回左边一个标签页
         removeTab(key) {
             let temp = this.state().tabList;
             let preTab = null;
@@ -60,10 +69,25 @@ export default Store.bind({
             }
             return preTab;
         },
-        // 点击菜单
+        // 根据路由查找菜单
+        getMenuByRoute(route) {
+            let menu = null;
+            let found = false;
+            this.state().menuList.forEach(i => {
+                findMenu(i, m => {
+                    if (!found && m.route === route) {
+                        menu = m;
+                        found = true;
+                    }
+                });
+            });
+            return menu;
+        },
+        // 点击菜单，返回点击的菜单
         menuClick(key) {
             let menu = null;
             let found = false;
+            // 查找菜单
             this.state().menuList.forEach(i => {
                 findMenu(i, m => {
                     if (!found && m.id === key) {
@@ -74,11 +98,13 @@ export default Store.bind({
             });
             if (menu && menu.route) {
                 let tab = this.getTab(menu.id);
+                // 标签页未打开
                 if (!tab) {
                     let temp = this.state().tabList;
                     temp.push(menu);
                     this.publish({tabList: temp});
                 }
+                // 激活标签页
                 this.setActiveTab(menu.id);
             }
             return menu;
@@ -112,10 +138,3 @@ let findMenu = (function findMenuHelper(menu, callback) {
         if (typeof callback === 'function') callback(menu);
     }
 });
-
-// 将当前打开的Tab页保存到SessionStorage
-function storeTabList(state) {
-    window.sessionStorage.setItem('tabList', JSON.stringify(state.tabList));
-    window.sessionStorage.setItem('activeTab', state.activeTab);
-    window.sessionStorage.setItem('menuCollapse', state.menuCollapse);
-}
