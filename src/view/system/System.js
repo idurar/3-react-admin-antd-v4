@@ -30,7 +30,6 @@ function System(props) {
         menuStore.action.restoreTabList();
         return () => {
             window.removeEventListener('resize', changeFrameHeight);
-
         };
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
