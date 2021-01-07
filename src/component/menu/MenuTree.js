@@ -56,7 +56,8 @@ function MenuTree(props) {
         <div className={'menuTree'}>
             <AppTitle/>
             <div className={'menuTree-div'}>
-                <Menu mode={'inline'} theme={'dark'} inlineIndent={10} onClick={menu => menuClick(menu)}>
+                <Menu mode={'inline'} theme={'dark'} inlineIndent={10} onClick={menu => menuClick(menu)}
+                      selectedKeys={menuStore.action.getSelectedMenu()}>
                     {
                         menuStore.state.menuList.map(i => subMenu(i))
                     }

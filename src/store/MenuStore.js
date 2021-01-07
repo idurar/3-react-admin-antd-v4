@@ -51,9 +51,9 @@ export default Store.bind({
         setActiveTab(key) {
             this.publish({activeTab: key});
         },
-        // 设置当前打开的菜单
-        setOpenMenu(array) {
-            this.publish({openMenu: array});
+        // 当前选中的菜单
+        getSelectedMenu() {
+            return [this.state().activeTab];
         },
         // 移除tab，返回左边一个标签页
         removeTab(key) {
