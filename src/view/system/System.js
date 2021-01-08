@@ -1,14 +1,12 @@
 import React from 'react';
-import {BackTop, Layout} from 'antd';
+import {Layout} from 'antd';
 import SystemStore from "../../store/SystemStore.js";
 import './System.css';
 import AppFooter from "../../component/footer/AppFooter.js";
 import MenuTree from "../../component/menu/MenuTree.js";
-import SystemRouter from "../../router/SystemRouter.js";
 import MenuStore from "../../store/MenuStore.js";
-import {ArrowUpOutlined} from '@ant-design/icons';
 import AppHeader from "../../component/header/AppHeader.js";
-import TabBar from "../../component/menu/TabBar";
+import TabBar from "../../component/menu/TabBar.js";
 
 /**
  * 系统主页
@@ -45,16 +43,8 @@ function System(props) {
                     <Layout.Header className={'header'}>
                         <AppHeader/>
                     </Layout.Header>
-                    <TabBar/>
                     <Layout.Content className={'content'} id={'pageContent'}>
-                        <div>
-                            <SystemRouter/>
-                        </div>
-                        <BackTop visibilityHeight={0} target={() => document.querySelector('#pageContent')}>
-                            <div className={'up-div'}>
-                                <div className="up"><ArrowUpOutlined/><span>回到顶部</span></div>
-                            </div>
-                        </BackTop>
+                        <TabBar/>
                     </Layout.Content>
                     <Layout.Footer className={'footer'}>
                         <AppFooter/>

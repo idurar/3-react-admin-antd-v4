@@ -10,13 +10,13 @@ export default {
                     id: '1-1',
                     icon: 'AppstoreOutlined',
                     name: '菜单1-1',
-                    route: '/system/page1'
+                    component: 'Page1',
                 },
                 {
                     id: '1-2',
                     icon: 'AppstoreOutlined',
                     name: '菜单1-2',
-                    route: '/system/page2',
+                    component: 'Page2',
                 }
             ]
         },
@@ -74,25 +74,6 @@ export default {
                         }
                     ]
                 }
-            ]
-        },
-        {
-            id: '4',
-            icon: 'AppstoreOutlined',
-            name: '示例',
-            submenu: [
-                {
-                    id: 'card',
-                    icon: 'AppstoreOutlined',
-                    name: '卡片',
-                    route: '/system/demo/cardDemo',
-                },
-                {
-                    id: 'table',
-                    icon: 'AppstoreOutlined',
-                    name: '表格',
-                    route: '/system/demo/tableDemo',
-                },
             ]
         },
     ],

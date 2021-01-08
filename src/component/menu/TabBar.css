@@ -14,23 +14,39 @@
     border: 1px solid #E4E7ED;
 }
 
-/* ---- 样式二 ---- */
-/*.ant-tabs-nav[role=tablist] {*/
-/*    background-color: #FFFFFF;*/
-/*    border-bottom: 2px solid #E4E7ED;*/
-/*}*/
+.tabBar, .ant-tabs, .ant-tabs-content, .ant-tabs-content-holder, .tabContent {
+    width: 100%;
+    height: 100%;
+}
 
-/*.ant-tabs-nav-list .ant-tabs-tab.ant-tabs-tab-active {*/
-/*    border: unset;*/
-/*}*/
+.tabContent {
+    overflow: auto;
+    padding: 5px;
+}
 
-/*.ant-tabs-nav .ant-tabs-nav-list .ant-tabs-tab.ant-tabs-tab-active {*/
-/*    border-bottom: 2px solid #409eff;*/
-/*}*/
+.ant-back-top {
+    margin-right: 50px;
+}
 
-/*.ant-tabs-nav .ant-tabs-nav-list .ant-tabs-tab:not(.ant-tabs-tab-active) {*/
-/*    background-color: #FFFFFF;*/
-/*    border: unset;*/
-/*}*/
+.up-div {
+    border: 1px solid #DCDFE6;
+    font-size: 16px;
+    display: inline-block;
+    width: 100px;
+    border-radius: 5px;
+    height: 40px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .12);
+    color: #409eff;
+}
 
-/* ----  ---- */
+.up-div:hover {
+    background-color: #f2f6fc;
+}
+
+.up {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: relative;
+    display: inline-block;
+}

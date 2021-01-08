@@ -15,13 +15,10 @@ function NProgressRoute(props) {
         showSpinner: false,
     });
 
-    React.useState(NProgress.start());
+    NProgress.start();
 
     React.useEffect(() => {
         NProgress.done();
-        return () => {
-            NProgress.start();
-        };
     });
 
     return (

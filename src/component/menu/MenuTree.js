@@ -4,7 +4,6 @@ import React from "react";
 import './MenuTree.css';
 import AppTitle from "./AppTitle.js";
 import * as AntIcon from '@ant-design/icons';
-import {useHistory} from 'react-router-dom';
 
 /**
  * 菜单组件
@@ -14,8 +13,6 @@ function MenuTree(props) {
     let menuStore = MenuStore();
 
     let icons = Object.keys(AntIcon);
-
-    let history = useHistory();
 
     // 获取图标
     function getIcon(displayName) {
@@ -47,8 +44,7 @@ function MenuTree(props) {
 
     // 点击菜单
     function menuClick(menu) {
-        let m = menuStore.action.menuClick(menu.key);
-        if (m && m.route) history.push(m.route);
+        menuStore.action.menuClick(menu.key);
         menuStore.action.storeTabList();
     }
 
@@ -57,6 +53,8 @@ function MenuTree(props) {
             <AppTitle/>
             <div className={'menuTree-div'}>
                 <Menu mode={'inline'} theme={'dark'} inlineIndent={10} onClick={menu => menuClick(menu)}
+                      openKeys={menuStore.state.openMenu}
+                      onOpenChange={keys => menuStore.action.setOpenMenu(keys)}
                       selectedKeys={menuStore.action.getSelectedMenu()}>
                     {
                         menuStore.state.menuList.map(i => subMenu(i))

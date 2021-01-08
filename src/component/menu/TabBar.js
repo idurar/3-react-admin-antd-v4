@@ -1,13 +1,13 @@
-import {useHistory} from 'react-router-dom';
-import {Tabs} from "antd";
+import {BackTop, Tabs} from "antd";
 import './TabBar.css';
 import MenuStore from "../../store/MenuStore.js";
+import Component from "../../view/system/page/index.js";
+import {ArrowUpOutlined} from "@ant-design/icons";
 
 /**
  * Tab栏
  */
 function TabBar(props) {
-    let history = useHistory();
     let menuStore = MenuStore();
 
     // 点击标签页
@@ -15,7 +15,6 @@ function TabBar(props) {
         if (menuStore.state.activeTab === key) return;
         let tab = menuStore.action.getTab(key);
         if (tab) {
-            history.push(tab.route);
             menuStore.action.setActiveTab(key);
         }
         menuStore.action.storeTabList();
@@ -45,7 +44,6 @@ function TabBar(props) {
         let preTab = menuStore.action.removeTab(key);
         //  关闭的是当前页，则激活左边一个标签页
         if (preTab && temp === key) {
-            history.push(preTab.route);
             menuStore.action.setActiveTab(preTab.id);
         }
         menuStore.action.storeTabList();
@@ -57,7 +55,18 @@ function TabBar(props) {
                   onTabClick={key => tabClick(key)} onEdit={(key, action) => tabEdit(key, action)}>
                 {
                     menuStore.state.tabList.map(i =>
-                        <Tabs.TabPane tab={i.name} key={i.id} closable={!i.unclose}></Tabs.TabPane>
+                        <Tabs.TabPane tab={i.name} key={i.id} closable={!i.unclose}>
+                            <div className={'tabContent'} id={'tabContent-' + i.id}>
+                                {
+                                    Component[i.component]()
+                                }
+                            </div>
+                            <BackTop visibilityHeight={0} target={() => document.querySelector('#tabContent-' + i.id)}>
+                                <div className={'up-div'}>
+                                    <div className="up"><ArrowUpOutlined/><span>回到顶部</span></div>
+                                </div>
+                            </BackTop>
+                        </Tabs.TabPane>
                     )
                 }
             </Tabs>

@@ -16,12 +16,14 @@ export default Store.bind({
             {
                 id: 'home',
                 name: '首页',
-                route: '/system/home',
+                component: 'Home',
                 unclose: true,
             },
         ],
         // 激活页
         activeTab: 'home',
+        // 打开的菜单
+        openMenu: [],
     },
     action: {
         // 切换菜单展开/收起
@@ -38,18 +40,14 @@ export default Store.bind({
             }
             return null;
         },
-        // 根据路由从tab数组中查找tab
-        getTabByRoute(route) {
-            for (let i = 0; i < this.state().tabList.length; i++) {
-                if (this.state().tabList[i].route === route) {
-                    return {...this.state().tabList[i]};
-                }
-            }
-            return null;
-        },
         // 设置当前激活的tab页
         setActiveTab(key) {
             this.publish({activeTab: key});
+        },
+        // 设置打开的菜单
+        setOpenMenu(keys) {
+            this.publish({openMenu: keys});
+            this.storeTabList();
         },
         // 当前选中的菜单
         getSelectedMenu() {
@@ -69,20 +67,6 @@ export default Store.bind({
             }
             return preTab;
         },
-        // 根据路由查找菜单
-        getMenuByRoute(route) {
-            let menu = null;
-            let found = false;
-            this.state().menuList.forEach(i => {
-                findMenu(i, m => {
-                    if (!found && m.route === route) {
-                        menu = m;
-                        found = true;
-                    }
-                });
-            });
-            return menu;
-        },
         // 点击菜单，返回点击的菜单
         menuClick(key) {
             let menu = null;
@@ -96,7 +80,7 @@ export default Store.bind({
                     }
                 });
             });
-            if (menu && menu.route) {
+            if (menu && menu.component) {
                 let tab = this.getTab(menu.id);
                 // 标签页未打开
                 if (!tab) {
@@ -118,6 +102,8 @@ export default Store.bind({
             if (activeTab) state.activeTab = activeTab;
             let menuCollapse = window.sessionStorage.getItem('menuCollapse');
             if (menuCollapse) state.menuCollapse = menuCollapse === 'true';
+            let openMenu = window.sessionStorage.getItem('openMenu');
+            if (openMenu) state.openMenu = JSON.parse(openMenu);
             this.publish(state);
         },
         // 将当前打开的Tab页保存到SessionStorage
@@ -126,6 +112,7 @@ export default Store.bind({
             window.sessionStorage.setItem('tabList', JSON.stringify(state.tabList));
             window.sessionStorage.setItem('activeTab', state.activeTab);
             window.sessionStorage.setItem('menuCollapse', state.menuCollapse);
+            window.sessionStorage.setItem('openMenu', JSON.stringify(state.openMenu));
         }
     }
 }, React)();
