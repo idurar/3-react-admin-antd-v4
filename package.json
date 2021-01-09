@@ -16,9 +16,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "prebuild": "node \"task/version.js\"",
+    "prebuild": "node \"task/prebuild.js\"",
     "build": "react-scripts build",
-    "postbuild": "node \"task/manage-output.js\""
+    "postbuild": "node \"task/postbuild.js\""
   },
   "eslintConfig": {
     "extends": [

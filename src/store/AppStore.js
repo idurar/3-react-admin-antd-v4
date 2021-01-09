@@ -9,7 +9,7 @@ export default Store.bind({
         // 应用软件名称
         appTitle: '应用软件名称',
         // 构建时间
-        buildTime: /*[BUILD_TIME*/'2021-01-08 16:51'/*BUILD_TIME]*/,
+        buildTime: /*[BUILD_TIME*/'yyyy-MM-dd HH:mm'/*BUILD_TIME]*/,
     },
     action: {
         // 设置title，默认使用appTitle
