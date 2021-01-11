@@ -1,4 +1,4 @@
-import {Switch} from 'react-router-dom';
+import {Switch, Redirect} from 'react-router-dom';
 import LoginPage from "../view/LoginPage.js";
 import System from "../view/system/System.js";
 import NotFound from "../view/NotFound.js";
@@ -13,7 +13,7 @@ function AppRouter(props) {
     // 路由数据
     let routes = [
         {
-            path: ['', '/login'],
+            path: ['/login'],
             component: LoginPage,
             exact: true,
         },
@@ -25,6 +25,7 @@ function AppRouter(props) {
 
     return (
         <Switch>
+            <Redirect exact={true} path={['']} to={'/login'}/>
             {
                 routes.map(r => <NProgressRoute key={r.path[0]} path={r.path} exact={r.exact} component={r.component}/>)
             }
