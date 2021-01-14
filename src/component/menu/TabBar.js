@@ -1,14 +1,16 @@
 import {BackTop, Tabs} from "antd";
 import './TabBar.css';
 import MenuStore from "../../store/MenuStore.js";
-import Component from "../../view/system/page/index.js";
+import getPage from "../../view/system/page/index.js";
 import {ArrowUpOutlined} from "@ant-design/icons";
+import SystemStore from "../../store/SystemStore";
 
 /**
  * Tab栏
  */
 function TabBar(props) {
     let menuStore = MenuStore();
+    let systemStore = SystemStore();
 
     // 点击标签页
     function tabClick(key) {
@@ -58,10 +60,10 @@ function TabBar(props) {
                         <Tabs.TabPane tab={i.name} key={i.id} closable={!i.unclose}>
                             <div className={'tabContent'} id={'tabContent-' + i.id}>
                                 {
-                                    Component[i.component]()
+                                    getPage(i.component, {systemStore})
                                 }
                             </div>
-                            <BackTop visibilityHeight={0} target={() => document.querySelector('#tabContent-' + i.id)}>
+                            <BackTop visibilityHeight={1} target={() => document.querySelector('#tabContent-' + i.id)}>
                                 <div className={'up-div'}>
                                     <div className="up"><ArrowUpOutlined/><span>回到顶部</span></div>
                                 </div>

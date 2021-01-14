@@ -1,5 +1,5 @@
 import React from 'react';
-import {Layout} from 'antd';
+import {Layout, Spin} from 'antd';
 import SystemStore from "../../store/SystemStore.js";
 import './System.css';
 import AppFooter from "../../component/footer/AppFooter.js";
@@ -34,23 +34,25 @@ function System(props) {
 
     return (
         <div className={'System'}>
-            <Layout style={{height: systemStore.state.frameHeight + 'px'}}>
-                <Layout.Sider className={'side'} collapsed={menuStore.state.menuCollapse}
-                              collapsedWidth={'50px'} width={'200px'}>
-                    <MenuTree/>
-                </Layout.Sider>
-                <Layout>
-                    <Layout.Header className={'header'}>
-                        <AppHeader/>
-                    </Layout.Header>
-                    <Layout.Content className={'content'} id={'pageContent'}>
-                        <TabBar/>
-                    </Layout.Content>
-                    <Layout.Footer className={'footer'}>
-                        <AppFooter/>
-                    </Layout.Footer>
+            <Spin size={'large'} spinning={systemStore.state.loading.on} tip={systemStore.state.loading.text}>
+                <Layout style={{height: systemStore.state.frameHeight + 'px'}}>
+                    <Layout.Sider className={'side'} collapsed={menuStore.state.menuCollapse}
+                                  collapsedWidth={'50px'} width={'200px'}>
+                        <MenuTree/>
+                    </Layout.Sider>
+                    <Layout>
+                        <Layout.Header className={'header'}>
+                            <AppHeader/>
+                        </Layout.Header>
+                        <Layout.Content className={'content'} id={'pageContent'}>
+                            <TabBar/>
+                        </Layout.Content>
+                        <Layout.Footer className={'footer'}>
+                            <AppFooter/>
+                        </Layout.Footer>
+                    </Layout>
                 </Layout>
-            </Layout>
+            </Spin>
         </div>
     );
 }

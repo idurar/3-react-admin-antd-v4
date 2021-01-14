@@ -34,3 +34,11 @@
     transition: all 0.5s;
 }
 
+.System .ant-spin-blur {
+    opacity: 1;
+}
+
+.System .ant-spin-blur::after {
+    opacity: 0;
+}
+
