@@ -3,7 +3,7 @@
  */
 function LoginPage(props) {
     return (
-        <div className={'loginPage'}>
+        <div className={'LoginPage'}>
             <div>登录页面</div>
             <button onClick={() => {
                 props.history.push('/system');

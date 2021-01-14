@@ -7,7 +7,7 @@ function BuildTime(props) {
     let appStore = AppStore();
 
     return (
-        <div className={'buildTime'}>
+        <div className={'BuildTime'}>
             <div>构建时间：{appStore.state.buildTime}</div>
         </div>
     );

@@ -3,7 +3,7 @@
  */
 function NotFound(props) {
     return (
-        <div className={'notFound'}>
+        <div className={'NotFound'}>
             <div>404 - Not Found</div>
         </div>
     );

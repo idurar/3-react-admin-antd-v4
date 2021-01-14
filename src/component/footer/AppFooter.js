@@ -7,7 +7,7 @@ import './AppFooter.css';
 function AppFooter(props) {
 
     return (
-        <div className={'appFooter'}>
+        <div className={'AppFooter'}>
             <BuildTime/>
         </div>
     );

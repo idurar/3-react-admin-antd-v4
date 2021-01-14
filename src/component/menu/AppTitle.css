@@ -1,11 +1,11 @@
-.bg {
+.AppTitle .bg {
     width: 100%;
     height: 50px;
     background-color: #404143;
     position: relative;
 }
 
-.bg-content {
+.AppTitle .bg-content {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -14,18 +14,18 @@
     width: fit-content;
 }
 
-.logo-div {
+.AppTitle .logo-div {
     display: inline-block;
     font-size: 0;
     vertical-align: middle;
 }
 
-.logo {
+.AppTitle .logo {
     width: 25px;
     height: 25px;
 }
 
-.title-div {
+.AppTitle .title-div {
     display: inline-block;
     vertical-align: middle;
     font-size: 18px;
@@ -34,7 +34,7 @@
     margin-left: 5px;
 }
 
-.title {
+.AppTitle .title {
     color: #FFFFFF;
     font-weight: bold;
 }

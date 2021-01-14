@@ -10,7 +10,7 @@ function CollapseButton(props) {
     let menuStore = MenuStore();
 
     return (
-        <div className={'collapseButton'}>
+        <div className={'CollapseButton'}>
             <Button onClick={() => menuStore.action.switchCollapse()}>
                 {
                     menuStore.state.menuCollapse ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>

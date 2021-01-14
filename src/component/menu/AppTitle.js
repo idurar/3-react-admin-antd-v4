@@ -1,7 +1,7 @@
 import AppStore from "../../store/AppStore.js";
 import MenuStore from "../../store/MenuStore.js";
 import './AppTitle.css';
-import logoImg from '../../logo.svg';
+import logoImg from '../../assets/logo.svg';
 
 /**
  * 标题组件
@@ -12,7 +12,7 @@ function AppTitle(props) {
     let menuStore = MenuStore();
 
     return (
-        <div className={'appTitle'} title={appStore.state.appTitle}>
+        <div className={'AppTitle'} title={appStore.state.appTitle}>
             <div className={'bg'}>
                 <div className={'bg-content'}>
                     <div className={'logo-div'}>

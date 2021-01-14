@@ -1,8 +1,8 @@
-.appFooter {
+.AppFooter {
     overflow: hidden;
 }
 
-.buildTime {
+.AppFooter .BuildTime {
     position: relative;
     top: 50%;
     transform: translate(0%, -50%);

@@ -50,7 +50,7 @@ function TabBar(props) {
     }
 
     return (
-        <div className={'tabBar'}>
+        <div className={'TabBar'}>
             <Tabs hideAdd={true} type={'editable-card'} size={'small'} activeKey={menuStore.state.activeTab}
                   onTabClick={key => tabClick(key)} onEdit={(key, action) => tabEdit(key, action)}>
                 {

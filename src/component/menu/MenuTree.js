@@ -49,7 +49,7 @@ function MenuTree(props) {
     }
 
     return (
-        <div className={'menuTree'}>
+        <div className={'MenuTree'}>
             <AppTitle/>
             <div className={'menuTree-div'}>
                 <Menu mode={'inline'} theme={'dark'} inlineIndent={10} onClick={menu => menuClick(menu)}

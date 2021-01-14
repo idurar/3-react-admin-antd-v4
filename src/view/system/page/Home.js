@@ -3,7 +3,7 @@
  */
 function Home(props) {
     return (
-        <div>Home</div>
+        <div className={'Home'}>Welcome</div>
     );
 }
 

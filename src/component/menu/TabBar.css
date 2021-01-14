@@ -1,34 +1,38 @@
-.ant-tabs-nav[role=tablist] {
+.TabBar .ant-tabs-nav[role=tablist] {
     margin: 0;
     line-height: 18px;
     background-color: #E4E7ED;
 }
 
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
-.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-remove {
+.TabBar .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn,
+.TabBar .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-remove {
     color: #409eff;
 }
 
-.ant-tabs-nav .ant-tabs-nav-list .ant-tabs-tab:not(.ant-tabs-tab-active) {
+.TabBar .ant-tabs-nav .ant-tabs-nav-list .ant-tabs-tab:not(.ant-tabs-tab-active) {
     background-color: #E4E7ED;
     border: 1px solid #E4E7ED;
 }
 
-.tabBar, .ant-tabs, .ant-tabs-content, .ant-tabs-content-holder, .tabContent {
+.TabBar,
+.TabBar .ant-tabs,
+.TabBar .ant-tabs-content,
+.TabBar .ant-tabs-content-holder,
+.TabBar .tabContent {
     width: 100%;
     height: 100%;
 }
 
-.tabContent {
+.TabBar .tabContent {
     overflow: auto;
     padding: 5px;
 }
 
-.ant-back-top {
+.TabBar .ant-back-top {
     margin-right: 50px;
 }
 
-.up-div {
+.TabBar .up-div {
     border: 1px solid #DCDFE6;
     font-size: 16px;
     display: inline-block;
@@ -39,11 +43,11 @@
     color: #409eff;
 }
 
-.up-div:hover {
+.TabBar .up-div:hover {
     background-color: #f2f6fc;
 }
 
-.up {
+.TabBar .up {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);

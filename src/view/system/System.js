@@ -33,7 +33,7 @@ function System(props) {
     }, []);
 
     return (
-        <div className={'system'}>
+        <div className={'System'}>
             <Layout style={{height: systemStore.state.frameHeight + 'px'}}>
                 <Layout.Sider className={'side'} collapsed={menuStore.state.menuCollapse}
                               collapsedWidth={'50px'} width={'200px'}>

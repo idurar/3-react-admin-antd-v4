@@ -1,9 +1,9 @@
-.userProfile {
+.UserProfile {
     font-size: 18px;
     color: #409EFF;
     cursor: pointer;
 }
 
-.ant-dropdown-menu-item:hover {
+.UserProfile .ant-dropdown-menu-item:hover {
     color: #409EFF;
 }

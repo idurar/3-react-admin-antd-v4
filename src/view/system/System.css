@@ -1,33 +1,36 @@
-.header, .footer, .side, .content {
+.System .header,
+.System .footer,
+.System .side,
+.System .content {
     overflow: auto;
     background-color: white;
 }
 
-.header {
+.System .header {
     height: 50px;
     padding: 0;
     border-bottom: 2px solid #E4E7ED;
 }
 
-.footer {
+.System .footer {
     height: 30px;
     padding: 0;
     border-top: 2px solid #E4E7ED;
 }
 
-.appFooter {
+.System .AppFooter {
     height: 100%;
 }
 
-.menuTree {
+.System .MenuTree {
     height: 100%;
 }
 
-.side {
+.System .side {
     background-color: #303133;
 }
 
-.ant-layout-sider {
+.System .ant-layout-sider {
     transition: all 0.5s;
 }
 

@@ -20,7 +20,7 @@ function UserProfile(props) {
     );
 
     return (
-        <div className={'userProfile'}>
+        <div className={'UserProfile'}>
             <Dropdown overlay={popMenu} trigger={['click']}>
                 <div>
                     <UserOutlined/> admin
