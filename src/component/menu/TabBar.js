@@ -3,7 +3,7 @@ import './TabBar.css';
 import MenuStore from "../../store/MenuStore.js";
 import getPage from "../../view/system/page/index.js";
 import {ArrowUpOutlined} from "@ant-design/icons";
-import SystemStore from "../../store/SystemStore";
+import SystemStore from "../../store/SystemStore.js";
 
 /**
  * Tab栏

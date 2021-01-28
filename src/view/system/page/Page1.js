@@ -1,4 +1,4 @@
-import SystemStore from "../../../store/SystemStore";
+import SystemStore from "../../../store/SystemStore.js";
 
 function Page1(props) {
     let systemStore = SystemStore();
