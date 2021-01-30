@@ -4,6 +4,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.3.0",
     "antd": "^4.10.0",
+    "env-cmd": "^10.1.0",
     "nprogress": "^0.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
